@@ -1,1 +1,127 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="shortcut icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/><meta name="theme-color" content="#000000"/><link rel="manifest" href="/manifest.json"/><title>React App</title><link href="/static/css/main.1fdd5562.chunk.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>!function(l){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],f=0,i=[];f<n.length;f++)t=n[f],p[t]&&i.push(p[t][0]),p[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(l[r]=o[r]);for(s&&s(e);i.length;)i.shift()();return c.push.apply(c,u||[]),a()}function a(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==p[u]&&(n=!1)}n&&(c.splice(r--,1),e=f(f.s=t[0]))}return e}var t={},p={2:0},c=[];function f(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return l[e].call(r.exports,r,r.exports,f),r.l=!0,r.exports}f.m=l,f.c=t,f.d=function(e,r,t){f.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},f.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},f.t=function(r,e){if(1&e&&(r=f(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(f.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)f.d(t,n,function(e){return r[e]}.bind(null,n));return t},f.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return f.d(r,"a",r),r},f.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},f.p="/";var r=window.webpackJsonp=window.webpackJsonp||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;a()}([])</script><script src="/static/js/1.794557b9.chunk.js"></script><script src="/static/js/main.950eb299.chunk.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JO - Full Stack Developer</title>
+  <script src="https://unpkg.com/htmx.org@2.0.1" integrity="sha384-QWGpdj554B4ETpJJC9z+ZHJcA/i59TyjxEPXiiUgN2WmTyV5OEZWCD6gQhgkdpB/" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <style>
+    .roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container mx-auto roboto-regular">
+    <div class="grid grid-cols-12 gap-4">
+      <div class="col-span-12 sm:col-span-4 md:col-span-4 xl:col-span-3">
+        <div class="py-8 text-center">
+        <img src="jo.jpg" class="rounded-full w-32 h-32 mx-auto"/>
+        <h2 class="text-slate-700 font-bold text-xl mt-4">Jose D. Lo Jr.</h2>
+        <ul>
+          <li class="text-slate-700 flex justify-center items-center text-sm font-bold mb-1.5">
+            <svg  class="mr-2" xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-home-link"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20.085 11.085l-8.085 -8.085l-9 9h2v7a2 2 0 0 0 2 2h4.5" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 1.807 1.143" /><path d="M21 21m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M21 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M16 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M21 16l-5 3l5 2" /></svg>
+            78 Veloso St. Obrero Davao City 8000</li>
+          <li class="text-slate-700 flex justify-center text-sm mb-1.5">
+            <svg  class="mr-2" xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-phone"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 3a1 1 0 0 1 .877 .519l.051 .11l2 5a1 1 0 0 1 -.313 1.16l-.1 .068l-1.674 1.004l.063 .103a10 10 0 0 0 3.132 3.132l.102 .062l1.005 -1.672a1 1 0 0 1 1.113 -.453l.115 .039l5 2a1 1 0 0 1 .622 .807l.007 .121v4c0 1.657 -1.343 3 -3.06 2.998c-8.579 -.521 -15.418 -7.36 -15.94 -15.998a3 3 0 0 1 2.824 -2.995l.176 -.005h4z" /></svg>
+            +639989392804</li>
+          <li class="text-slate-700 flex justify-center text-sm">
+            <svg class="mr-2" xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z" /><path d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z" /></svg>
+            jo@marketdragon.ph jdltechworks@gmail.com
+          </li>
+          <li>
+
+          </li>
+        </ul>
+        </div>
+      </div>
+      <div class="col-span-12 sm:col-span-4 md:col-span-9 xl:col-span-9">
+        <div class="py-4">
+          <p class="text-slate-900 text-base roboto-light text-sm py-8 leading-relaxed">
+            I am a <strong>Mobile and Web Developer</strong> with expertise in crafting advanced websites and developing standard-based web and mobile applications. My skills include proficiency in languages and frameworks such as HTML, CSS, JavaScript, PHP, Kotlin, and Laravel, as well as front-end styling with TailwindCSS. I am adept at creating responsive, user-friendly interfaces and implementing robust backend functionalities. Committed to industry best practices, I ensure that the applications I develop are secure, scalable, and maintainable. My approach combines technical knowledge with a focus on innovative problem-solving, allowing me to deliver high-quality digital solutions that enhance user experience and meet client needs effectively.
+          </p>
+          <div class="bg-slate-100 p-4 rounded">
+            <h2 class="font-bold text-xl mb-2">Career Objectives</h2>
+            <p class="text-slate-700 text-base roboto-light text-sm">
+              I am eager to join your team of skilled professionals and contribute to your innovative projects. My goal is to secure a challenging role within a dynamic and creative environment where I can leverage my expertise in web development and application design. With a strong background in [specific technologies or methodologies relevant to the position], I am confident in my ability to deliver high-quality solutions and collaborate effectively with your team. I am particularly drawn to your organization’s commitment to [specific aspect of the company's mission or values], which aligns with my own professional aspirations and passion for continuous learning and growth. I am excited about the opportunity to apply my skills in a stimulating setting, drive impactful results, and contribute to the success of your projects. I look forward to the possibility of discussing how my background and ambitions align with your team's needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
