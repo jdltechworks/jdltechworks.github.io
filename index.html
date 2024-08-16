@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ dark: false }" :class="{ 'dark': dark }">
+<html lang="en" x-data="{ dark: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches }" :class="{ 'dark': dark }">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -87,112 +87,107 @@
 
   </style>
 </head>
-<body class="bg-white dark:bg-slate-900">
-  <div class="container mx-auto roboto-regular">
-    <div class="grid grid-cols-12 gap-4">
-      <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-12 xl:col-span-3">
-        <div class="pb-8 text-center border border-slate-100 dark:border-slate-800 sticky top-0">
-          <ul class="flex items-start justify-center">
-            <li class="transition duration-150 ease-in text-slate-700 flex justify-center items-center text-sm font-bold mb-1.5 dark:text-white hover:text-blue-400">
-              <a href="/" title="78 Veloso St. Obrero Davao City 8000" class="p-2" aria-label="Home and address">
-                <svg xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-home-link"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20.085 11.085l-8.085 -8.085l-9 9h2v7a2 2 0 0 0 2 2h4.5" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 1.807 1.143" /><path d="M21 21m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M21 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M16 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M21 16l-5 3l5 2" /></svg>
-              </a>
-            </li>
-            <li x-data="{ open: false }" class="transition duration-150 ease-in text-slate-700 mb-1.5 flex justify-center relative dark:text-white hover:text-blue-400">              
-              <button @click.prevent="open = !open" class="p-2" aria-label="emails">
-                <svg xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z" /><path d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z" /></svg>
-              </button>
-              <div x-show="open" @click.away="open = false" class="text-left absolute z-50 top-full left-0 bg-white dark:bg-slate-900 text-white">
-                <a href="mailto:jo@marketdragon.ph" class="block leading-snug p-4  hover:bg-slate-100 dark:hover:bg-slate-800 text-sm">jo@marketdragon.ph</a>
-                <a href="mailto:jdltechworks@gmail.com" class="block leading-snug p-4 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm">jdltechworks@gmail.com</a>
-              </div>
+<body class="bg-white dark:bg-black">
+  <div class="py-2 text-center border border-slate-100 dark:border-slate-900 sticky top-0 z-50 bg-white dark:bg-black">
+    <div class="container px-4 mx-auto flex items-center">
 
-            </li>
-            <li class="transition duration-150 ease-in text-slate-700 flex justify-center text-sm dark:text-white hover:text-blue-400">
-              <a href="https://github.com/jdltechworks" aria-label="github" target="_blank" class="flex items-center p-2">
-                <svg xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
-              </a>
-            </li>
-            <li class="transition duration-150 ease-in text-slate-700 flex justify-center text-sm dark:text-white hover:text-blue-400">
-              <a href="https://www.linkedin.com/in/joxyz/" aria-label="github" target="_blank" class="flex items-center p-2">
-                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>              </a>
-            </li>
-          </ul>
-          <ul>
-            <li class="text-slate-700 dark:text-white text-sm font-bold relative border-b dark:border-slate-800 pt-4 py-2 mb-6">
-              <img src="jo.jpg" class="rounded-full w-32 h-32 mx-auto" title="JO" alt="joxyz" />
+      <a href="/">
+        <img src="jo.jpg" class="rounded-full w-14 h-14 mx-auto" title="JO" alt="joxyz" />
+      </a>
+      <div class="flex-1"></div>
+      <ul class="text-left flex">
+        <li class="px-4 mb-1">
+          <a href="#" class="rounded focus:bg-blue-700 focus:text-white active:bg-blue-600 dark:active:bg-blue-600 active:text-white dark:active:text-white font-bold transition duration-150 ease-in hover:bg-blue-600 hover:text-white dark:hover:text-white dark:text-white block py-2 px-4">Home</a>
 
-              <a href="index.html" class="w-full px-4  pt-4" title="The grinder is designed By Ahmad Lani Jaelani posted from noun project">
-                    
-                </span><br />
-                <span class="text-slate-800 text-xl dark:text-white">is
-                    
-                </span>
-<svg class="fill-current mx-auto animate-shake" width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve"><g><path d="M17.2,78.7c-2.3,0-3.8-0.5-4.7-1.5c-1-1.2-0.7-3-0.7-3c0.2-0.8-0.3-1.6-1.1-1.8c-0.8-0.2-1.6,0.3-1.8,1.1   c0,0.1-0.7,3.1,1.3,5.5c1.4,1.8,3.8,2.7,7,2.7c0.8,0,1.5-0.7,1.5-1.5S18,78.7,17.2,78.7z"/><path d="M21.7,79.3l-1.1,0.1c-0.8,0.1-1.4,0.8-1.4,1.6c0.1,0.8,0.7,1.4,1.5,1.4c0,0,0.1,0,0.1,0l1.1-0.1c0.8-0.1,1.4-0.8,1.4-1.6   C23.2,79.8,22.5,79.2,21.7,79.3z"/><path d="M47.2,46c-0.9-5-6.1-9.1-6.3-9.3c-0.6-0.5-1.6-0.4-2.1,0.2S38.4,38.5,39,39c0,0,4.5,3.7,5.3,7.5c0.1,0.7,0.8,1.2,1.5,1.2   c0.1,0,0.2,0,0.3,0C46.9,47.6,47.4,46.8,47.2,46z"/><path d="M54.8,43.7c0.3,0,0.6-0.1,0.8-0.2l5.1-3.2c0.7-0.4,0.9-1.4,0.5-2.1c-0.4-0.7-1.4-0.9-2.1-0.5L54,40.9   c-0.7,0.4-0.9,1.4-0.5,2.1C53.8,43.4,54.3,43.7,54.8,43.7z"/><path d="M69.4,28.2c0.3,0.5,0.8,0.8,1.3,0.8c0.2,0,0.4,0,0.7-0.2l10.3-5c0.7-0.4,1.1-1.3,0.7-2c-0.4-0.7-1.3-1.1-2-0.7l-10.3,5   C69.4,26.6,69,27.5,69.4,28.2z"/><path d="M79,27.1c-0.7,0.4-0.9,1.3-0.5,2.1c0.3,0.5,0.8,0.7,1.3,0.7c0.3,0,0.5-0.1,0.8-0.2l3.2-1.9c0.7-0.4,0.9-1.3,0.5-2.1   c-0.4-0.7-1.3-0.9-2.1-0.5L79,27.1z"/><path d="M95.3,18.9c-0.4-0.7-1.3-1.1-2-0.7l-5.2,2.5c-1.2-1.8-3.2-4-6.6-7.4c-0.4-0.4-1.1-0.6-1.7-0.3l-23.1,9.8l-19.4,9.5   c-3.4-1-6.1-0.8-8.2,0.6c-1.8,1.3-2.6,3.2-2.9,4.5c-7.4,1.2-12.8,3.9-16,8.3c-3.6,4.9-3,10-2.9,10.8c0.1,3.2,0.5,5.9,1.3,8.1   c-4.9,5-5.7,12.2-2,17.3c2.2,3.1,6.2,5.3,11.8,5.3c4.4,0,9.7-1.4,16.1-4.8c0.1,0.4,0.2,0.8,0.4,1.2c0.1,0.4,0.4,0.7,0.8,0.9   c0.2,0.1,0.4,0.1,0.6,0.1c0.2,0,0.4,0,0.5-0.1c4.1-1.6,7.2-4.1,9.3-7.4c0.7,1.2,1.8,2.2,3.2,2.6c0.6,0.2,1.3,0.3,1.9,0.3   c0.9,0,1.8-0.2,2.6-0.6c1.4-0.7,2.4-1.9,2.9-3.3c0.5-1.5,0.4-3.1-0.3-4.4c0,0,0,0,0,0c-0.3-0.6-0.7-1.1-1.1-1.5   c-0.1-0.1-0.2-0.2-0.2-0.3l-0.4-0.3c0,0,0,0,0,0l-5.3-4.5c0.1-3.7-0.5-6.2-0.8-7.8c-0.1-0.4-0.2-0.8-0.2-1.1   c7.8-5.9,18.7-12.2,18.8-12.2l21.8-12.2c0.5-0.3,0.8-0.7,0.8-1.3c0.1-3.3,0.1-5.3-0.4-7.1l5.2-2.5C95.4,20.5,95.7,19.6,95.3,18.9z    M12,62.3c0.1,0,0.1,0.1,0.2,0.1c0.3,0.2,0.6,0.4,1,0.6c0.1,0,0.1,0.1,0.2,0.1c0.3,0.2,0.7,0.4,1,0.5c0,0,0,0,0,0   c0.3,0.2,0.7,0.3,1.1,0.4c0.1,0,0.1,0.1,0.2,0.1c0.3,0.1,0.7,0.2,1,0.3c0.1,0,0.1,0,0.2,0c0.3,0.1,0.7,0.2,1,0.2c0,0,0.1,0,0.1,0   c0.4,0.1,0.7,0.1,1.1,0.2c0.1,0,0.1,0,0.2,0c0.4,0,0.7,0.1,1.1,0.1c0,0,0,0,0,0c0.3,0,0.7,0,1,0c0.1,0,0.1,0,0.2,0c0.3,0,0.7,0,1,0   c0.1,0,0.1,0,0.2,0c0.3,0,0.7,0,1-0.1c0,0,0,0,0,0c0.3,0,0.7-0.1,1-0.1c0.1,0,0.1,0,0.2,0c0.3-0.1,0.6-0.1,0.9-0.2c0,0,0.1,0,0.1,0   c0.3-0.1,0.6-0.1,0.8-0.2c0,0,0.1,0,0.1,0c0.3-0.1,0.5-0.1,0.8-0.2c0.1,0,0.1,0,0.2,0c0.3-0.1,0.5-0.2,0.7-0.3   c0.4-0.1,0.7-0.5,0.9-0.8s0.1-0.8,0-1.2c-0.5-1-0.7-1.9-0.7-2.7c0-1.3,0.4-2.3,0.9-3c1.2-1.6,3.5-2.6,5.5-2.3   c0.8,0.1,1.8,0.5,2.5,1.6c-0.5,0-1,0.1-1.3,0.5c-0.5,0.6-0.4,1.6,0.2,2.1l3.8,3.2c0,0,0,0,0,0l8.9,7.5C49.1,68.9,49,69,48.8,69   c-0.3,0.2-0.7,0.4-1,0.6c-0.1,0-0.1,0.1-0.2,0.2c-0.2,0.2-0.5,0.4-0.7,0.6c-0.1,0.1-0.1,0.2-0.2,0.3c-0.2,0.2-0.3,0.4-0.5,0.6   c-0.1,0.1-0.1,0.3-0.2,0.4c-0.1,0.2-0.2,0.4-0.3,0.6l-3.9-4c0,0,0,0,0,0l-8.6-8.8c-0.6-0.6-1.5-0.6-2.1,0c-0.6,0.6-0.6,1.5,0,2.1   l7.8,8c0,0,0,0.1-0.1,0.1c-0.1,0.2-0.2,0.3-0.3,0.5c-0.1,0.1-0.1,0.2-0.2,0.3c-0.1,0.1-0.2,0.3-0.3,0.4c-0.1,0.1-0.2,0.2-0.3,0.3   c-0.1,0.1-0.3,0.3-0.4,0.4c-0.1,0.1-0.2,0.2-0.3,0.3c-0.1,0.1-0.3,0.2-0.4,0.4c-0.1,0.1-0.2,0.2-0.3,0.2c-0.2,0.1-0.3,0.2-0.5,0.4   c-0.1,0.1-0.2,0.1-0.3,0.2c-0.2,0.1-0.4,0.3-0.7,0.4c-0.1,0-0.1,0.1-0.2,0.1c0,0,0,0,0,0l-3.7-4c-0.3-0.3-0.7-0.5-1.1-0.5   c-0.1,0-0.2,0-0.2,0c-8.5,1.4-13.5,0.7-16.2-2.3c-1.2-1.3-2-3-2.5-5.3c0,0,0.1,0,0.1,0.1C11.4,61.8,11.7,62,12,62.3z M9.2,80.1   c-2.7-3.7-2.2-8.8,1-12.7c0.3,0.5,0.7,1,1.1,1.4c3.4,3.8,9,4.8,18.1,3.4l3.5,3.8c0.1,0.7,0.4,1.8,0.8,3.4   C20.6,86.7,12.5,84.5,9.2,80.1z M37.4,81.1c-0.6-1.8-1.1-3.7-1.3-4.7c0,0,0,0,0,0c0.5-0.3,1-0.6,1.4-0.9c0.1,0,0.1-0.1,0.2-0.1   c0.4-0.3,0.8-0.6,1.2-0.9c0.1-0.1,0.1-0.1,0.2-0.2c0.4-0.3,0.7-0.7,1-1c0-0.1,0.1-0.1,0.1-0.2c0.3-0.4,0.7-0.8,0.9-1.2l3,3   C42.7,77.6,40.4,79.6,37.4,81.1z M54.1,75.2c-0.2,0.7-0.8,1.3-1.4,1.6c-0.7,0.3-1.5,0.4-2.2,0.1c-0.7-0.2-1.3-0.8-1.6-1.4   c-0.3-0.7-0.4-1.4-0.1-2.2c0.2-0.7,0.8-1.3,1.4-1.6c0.2-0.1,0.4-0.2,0.7-0.2c0.1,0,0.1,0,0.2,0c0.2,0,0.4,0,0.5,0c0,0,0.1,0,0.1,0   c0.2,0,0.4,0.1,0.6,0.1c0,0,0.1,0,0.1,0c0.2,0.1,0.4,0.2,0.6,0.3l0,0l0.2,0.2c0.3,0.2,0.5,0.5,0.6,0.8   C54.3,73.7,54.3,74.5,54.1,75.2z M45.8,58c0.2,1.1,0.6,2.6,0.7,4.6l-3.9-3.2c-0.6-2-1.5-3.5-1.7-4c-0.9-2.4-2.8-4-5.3-4.4   c-3.1-0.5-6.5,0.9-8.4,3.5c-0.5,0.7-0.9,1.5-1.2,2.3c0,0.1,0,0.1-0.1,0.2c-0.1,0.2-0.1,0.4-0.1,0.5c0,0.1-0.1,0.2-0.1,0.3   c0,0.1,0,0.3,0,0.4c0,0.2,0,0.4-0.1,0.5c0,0.1,0,0.2,0,0.3c0,0.2,0,0.4,0,0.7c0,0.1,0,0.2,0,0.3c0,0.2,0,0.4,0.1,0.7   c0,0.1,0.1,0.2,0.1,0.3c0,0.2,0.1,0.4,0.2,0.6c-2.7,0.7-8.6,1.6-12.9-2.2c0,0-0.1-0.1-0.1-0.1c-0.2-0.2-0.5-0.5-0.7-0.7   c-0.1-0.1-0.2-0.2-0.3-0.3c-0.2-0.2-0.3-0.4-0.5-0.7c-0.1-0.2-0.3-0.3-0.4-0.5c-0.1-0.2-0.3-0.4-0.4-0.7c-0.1-0.2-0.2-0.4-0.4-0.6   c-0.1-1-0.3-4.8,2.4-8.4c2.8-3.8,7.9-6.2,15.1-7.2c0.7-0.1,1.3-0.7,1.3-1.4c0,0,0.1-2.3,1.7-3.4c1.6-1.1,4.2-0.6,6.1,0   c0.4,0.1,0.8,0.1,1.1-0.1l4.6-2.3l4.4,5c0.3,0.3,0.7,0.5,1.1,0.5c0.4,0,0.7-0.1,1-0.4c0.6-0.5,0.7-1.5,0.1-2.1l-3.8-4.4l11.4-5.6   c7.1,8.8,7.4,9.4,8,16c-2.8,1.6-11.9,7.1-18.7,12.2C45.2,55,45.5,56.4,45.8,58z M86.9,29.6l-19,10.7c-0.6-6.1-1.4-7.4-8-15.6   l20.3-8.5C86.8,23.1,87.1,23.6,86.9,29.6z"/></g>
-                  </svg>
-                  <span class="text-slate-800 dark:text-white italic">in the software development industry since 2012
-                    
-                  </span>
-              </a>
-            </li>
-          </ul>
-          <div class="text-slate-700 flex justify-start text-sm my-5 dark:text-white">
-            <h3 class="flex items-center font-bold px-4 text-base w-full">
-              Educational Qualifications
-            </h3>
+        </li>
+        <li class="px-4">
+          <a href="#" class="rounded focus:bg-blue-700 focus:text-white active:bg-blue-600 dark:active:bg-blue-600 active:text-white dark:active:text-white font-bold transition duration-150 ease-in hover:bg-blue-600 hover:text-white dark:hover:text-white dark:text-white block py-2 px-4">About Me</a>
+        </li>
+        <li class="px-4 mb-1">
+          <a href="#" class="rounded focus:bg-blue-700 focus:text-white active:bg-blue-600 dark:active:bg-blue-600 active:text-white dark:active:text-white font-bold transition duration-150 ease-in hover:bg-blue-600 hover:text-white dark:hover:text-white dark:text-white block py-2 px-4">Skills</a>
 
-          </div>
-          <ul class="text-left">
-            <li class="px-4 pb-1 text-sm dark:text-white">Bachelor's Degree of Information Technology
+        </li>
+        <li class="px-4">
+          <a href="#" class="rounded focus:bg-blue-700 focus:text-white active:bg-blue-600 dark:active:bg-blue-600 active:text-white dark:active:text-white font-bold transition duration-150 ease-in hover:bg-blue-600 hover:text-white dark:hover:text-white dark:text-white block py-2 px-4">Blogs</a>
 
-            </li>
-            <li class="px-4 text-sm dark:text-white">Web Development  - Professional Training Courses taken
+        </li>
+        <li class="px-4">
+          <a href="#" class="rounded focus:bg-blue-700 focus:text-white active:bg-blue-600 dark:active:bg-blue-600 active:text-white dark:active:text-white font-bold transition duration-150 ease-in hover:bg-blue-600 hover:text-white dark:hover:text-white dark:text-white block py-2 px-4">Portfolio</a>
 
+        </li>
+        <li class="px-4">
+          <a href="#" class="rounded focus:bg-blue-700 focus:text-white active:bg-blue-600 dark:active:bg-blue-600 active:text-white dark:active:text-white font-bold transition duration-150 ease-in hover:bg-blue-600 hover:text-white dark:hover:text-white dark:text-white block py-2 px-4">Contact</a>
 
-            </li>
-          </ul>
-          <div class="text-slate-700 dark:text-white flex justify-start text-sm my-5">
-            <h3 class="flex items-center font-bold px-4 text-base w-full">
-              💪 Core Strengths
-            </h3>
+        </li>
+      </ul>
 
-          </div>
-          <ul class="text-left dark:text-white">
-            <li class="px-4 pb-1 text-sm">Can work on multiple projects simultaneously.
-            </li>
-            <li class="px-4 pb-1 text-sm">Helpful by nature.
-            </li>
-            <li class="px-4 text-sm">Able to handle and sort all technical related queries/issues independently.
+      <div class="flex justify-center">
+        <button @click.prevent="dark =!dark" class="p-2 text-slate-700 hover:text-slate-800 dark:hover:text-slate-200 dark:text-white mr-5">
+          <svg  x-show="dark" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brightness-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 5l0 .01" /><path d="M17 7l0 .01" /><path d="M19 12l0 .01" /><path d="M17 17l0 .01" /><path d="M12 19l0 .01" /><path d="M7 17l0 .01" /><path d="M5 12l0 .01" /><path d="M7 7l0 .01" /></svg>
+          <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-brightness-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 8a4 4 0 1 1 -3.995 4.2l-.005 -.2l.005 -.2a4 4 0 0 1 3.995 -3.8z" /><path d="M12 4a1 1 0 0 1 .993 .883l.007 .127a1 1 0 0 1 -1.993 .117l-.007 -.127a1 1 0 0 1 1 -1z" /><path d="M17 6a1 1 0 0 1 .993 .883l.007 .127a1 1 0 0 1 -1.993 .117l-.007 -.127a1 1 0 0 1 1 -1z" /><path d="M19 11a1 1 0 0 1 .993 .883l.007 .127a1 1 0 0 1 -1.993 .117l-.007 -.127a1 1 0 0 1 1 -1z" /><path d="M17 16a1 1 0 0 1 .993 .883l.007 .127a1 1 0 0 1 -1.993 .117l-.007 -.127a1 1 0 0 1 1 -1z" /><path d="M12 18a1 1 0 0 1 .993 .883l.007 .127a1 1 0 0 1 -1.993 .117l-.007 -.127a1 1 0 0 1 1 -1z" /><path d="M7 16a1 1 0 0 1 .993 .883l.007 .127a1 1 0 0 1 -1.993 .117l-.007 -.127a1 1 0 0 1 1 -1z" /><path d="M5 11a1 1 0 0 1 .993 .883l.007 .127a1 1 0 0 1 -1.993 .117l-.007 -.127a1 1 0 0 1 1 -1z" /><path d="M7 6a1 1 0 0 1 .993 .883l.007 .127a1 1 0 0 1 -1.993 .117l-.007 -.127a1 1 0 0 1 1 -1z" /></svg>
+        </button>
+        <a href="cv.pdf" target="_blank" class="relative inline-flex text-white mx-auto bg-blue-700 hover:bg-blue-700 focus:ring-1 focus:ring-offset-1 focus:ring-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+          <span class="flex absolute h-5 w-5 top-0 right-0 -mt-1 -mr-1">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-5 w-5 bg-lime-500"></span>
+          </span>
+          Download CV
+        </a>
 
-            </li>
-            <li class="flex justify-center">
-              <a href="cv.pdf" target="_blank" class="relative inline-flex text-white my-4 bg-blue-700 hover:bg-blue-700 focus:ring-1 focus:ring-offset-1 focus:ring-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                <span class="flex absolute h-5 w-5 top-0 right-0 -mt-1 -mr-1">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-5 w-5 bg-lime-500"></span>
-                </span>
-                Download CV
-              </a>
-
-            </li>
-          </ul>
-        </div>
       </div>
-      <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-12 xl:col-span-9">
-        <div class="py-4">
-          <div class="flex items-start border-l-4 border-slate-400 mt-2 mb-10 py-8">
-            <svg class="w-16 h-16 text-slate-400" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-quote"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 11h-4a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v6c0 2.667 -1.333 4.333 -4 5" /><path d="M19 11h-4a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v6c0 2.667 -1.333 4.333 -4 5" /></svg>
-            <p class="flex-1 text-slate-800 text-base roboto-regular text-sm leading-relaxed py-1.5 px-4 dark:text-white">
-            I am a <strong>Mobile and Web Developer</strong> with expertise in crafting advanced websites and developing standard-based web and mobile applications. My skills include proficiency in languages and frameworks such as HTML, CSS, JavaScript, PHP, Kotlin, and Laravel, as well as front-end styling with TailwindCSS. I am adept at creating responsive, user-friendly interfaces and implementing robust backend functionalities. Committed to industry best practices, I ensure that the applications I develop are secure, scalable, and maintainable. My approach combines technical knowledge with a focus on innovative problem-solving, allowing me to deliver high-quality digital solutions that enhance user experience and meet client needs effectively.
-          </p>
-          </div>
-          <div class="bg-slate-100 p-4 rounded dark:bg-slate-900 dark:border dark:text-white">
-            <h2 class="font-bold text-xl mb-2">Career Objectives</h2>
-            <p class="text-slate-700 text-base roboto-light text-sm dark:text-slate-100">
-              I am eager to join your team of skilled professionals and contribute to your innovative projects. My goal is to secure a challenging role within a dynamic and creative environment where I can leverage my expertise in web development and application design. With a strong background in [specific technologies or methodologies relevant to the position], I am confident in my ability to deliver high-quality solutions and collaborate effectively with your team. I am particularly drawn to your organization’s commitment to [specific aspect of the company's mission or values], which aligns with my own professional aspirations and passion for continuous learning and growth. I am excited about the opportunity to apply my skills in a stimulating setting, drive impactful results, and contribute to the success of your projects. I look forward to the possibility of discussing how my background and ambitions align with your team's needs.
-            </p>
-          </div>
+    </div>
 
+  </div>
+  <div class="container mx-auto roboto-regular">
+      <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-12 xl:col-span-9">
+        <div class="bg-fixed  relative grid grid-cols-12 rounded-b shadow bg-[url('images/david-pupaza-Q9-QEy1_jYI-unsplash.jpg')]">
+          <div class="col-span-12 md:col-span-6 flex items-center">
+            <img src="images/jo.png" alt="Jo the dragon" class="h-96 mx-auto" />
+          </div>
+          <div class="col-span-12 md:col-span-6 py-24 bg-gradient-to-r from-transparent to-white dark:to-black ">
+            <h1 class="text-white dark:text-white text-center">
+              <span class="text-4xl roboto-bold text-4xl text-slate-800 dark:text-white">
+                I'm JO! I've been 
+              </span>
+              <a href="index.html" class="px-4 pt-4 text-slate-800 dark:text-white" title="The grinder is designed By Ahmad Lani Jaelani posted from noun project">
+
+                <svg class="fill-current animate-shake mx-auto" width="250" height="250" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve"><g><path d="M17.2,78.7c-2.3,0-3.8-0.5-4.7-1.5c-1-1.2-0.7-3-0.7-3c0.2-0.8-0.3-1.6-1.1-1.8c-0.8-0.2-1.6,0.3-1.8,1.1   c0,0.1-0.7,3.1,1.3,5.5c1.4,1.8,3.8,2.7,7,2.7c0.8,0,1.5-0.7,1.5-1.5S18,78.7,17.2,78.7z"/><path d="M21.7,79.3l-1.1,0.1c-0.8,0.1-1.4,0.8-1.4,1.6c0.1,0.8,0.7,1.4,1.5,1.4c0,0,0.1,0,0.1,0l1.1-0.1c0.8-0.1,1.4-0.8,1.4-1.6   C23.2,79.8,22.5,79.2,21.7,79.3z"/><path d="M47.2,46c-0.9-5-6.1-9.1-6.3-9.3c-0.6-0.5-1.6-0.4-2.1,0.2S38.4,38.5,39,39c0,0,4.5,3.7,5.3,7.5c0.1,0.7,0.8,1.2,1.5,1.2   c0.1,0,0.2,0,0.3,0C46.9,47.6,47.4,46.8,47.2,46z"/><path d="M54.8,43.7c0.3,0,0.6-0.1,0.8-0.2l5.1-3.2c0.7-0.4,0.9-1.4,0.5-2.1c-0.4-0.7-1.4-0.9-2.1-0.5L54,40.9   c-0.7,0.4-0.9,1.4-0.5,2.1C53.8,43.4,54.3,43.7,54.8,43.7z"/><path d="M69.4,28.2c0.3,0.5,0.8,0.8,1.3,0.8c0.2,0,0.4,0,0.7-0.2l10.3-5c0.7-0.4,1.1-1.3,0.7-2c-0.4-0.7-1.3-1.1-2-0.7l-10.3,5   C69.4,26.6,69,27.5,69.4,28.2z"/><path d="M79,27.1c-0.7,0.4-0.9,1.3-0.5,2.1c0.3,0.5,0.8,0.7,1.3,0.7c0.3,0,0.5-0.1,0.8-0.2l3.2-1.9c0.7-0.4,0.9-1.3,0.5-2.1   c-0.4-0.7-1.3-0.9-2.1-0.5L79,27.1z"/><path d="M95.3,18.9c-0.4-0.7-1.3-1.1-2-0.7l-5.2,2.5c-1.2-1.8-3.2-4-6.6-7.4c-0.4-0.4-1.1-0.6-1.7-0.3l-23.1,9.8l-19.4,9.5   c-3.4-1-6.1-0.8-8.2,0.6c-1.8,1.3-2.6,3.2-2.9,4.5c-7.4,1.2-12.8,3.9-16,8.3c-3.6,4.9-3,10-2.9,10.8c0.1,3.2,0.5,5.9,1.3,8.1   c-4.9,5-5.7,12.2-2,17.3c2.2,3.1,6.2,5.3,11.8,5.3c4.4,0,9.7-1.4,16.1-4.8c0.1,0.4,0.2,0.8,0.4,1.2c0.1,0.4,0.4,0.7,0.8,0.9   c0.2,0.1,0.4,0.1,0.6,0.1c0.2,0,0.4,0,0.5-0.1c4.1-1.6,7.2-4.1,9.3-7.4c0.7,1.2,1.8,2.2,3.2,2.6c0.6,0.2,1.3,0.3,1.9,0.3   c0.9,0,1.8-0.2,2.6-0.6c1.4-0.7,2.4-1.9,2.9-3.3c0.5-1.5,0.4-3.1-0.3-4.4c0,0,0,0,0,0c-0.3-0.6-0.7-1.1-1.1-1.5   c-0.1-0.1-0.2-0.2-0.2-0.3l-0.4-0.3c0,0,0,0,0,0l-5.3-4.5c0.1-3.7-0.5-6.2-0.8-7.8c-0.1-0.4-0.2-0.8-0.2-1.1   c7.8-5.9,18.7-12.2,18.8-12.2l21.8-12.2c0.5-0.3,0.8-0.7,0.8-1.3c0.1-3.3,0.1-5.3-0.4-7.1l5.2-2.5C95.4,20.5,95.7,19.6,95.3,18.9z    M12,62.3c0.1,0,0.1,0.1,0.2,0.1c0.3,0.2,0.6,0.4,1,0.6c0.1,0,0.1,0.1,0.2,0.1c0.3,0.2,0.7,0.4,1,0.5c0,0,0,0,0,0   c0.3,0.2,0.7,0.3,1.1,0.4c0.1,0,0.1,0.1,0.2,0.1c0.3,0.1,0.7,0.2,1,0.3c0.1,0,0.1,0,0.2,0c0.3,0.1,0.7,0.2,1,0.2c0,0,0.1,0,0.1,0   c0.4,0.1,0.7,0.1,1.1,0.2c0.1,0,0.1,0,0.2,0c0.4,0,0.7,0.1,1.1,0.1c0,0,0,0,0,0c0.3,0,0.7,0,1,0c0.1,0,0.1,0,0.2,0c0.3,0,0.7,0,1,0   c0.1,0,0.1,0,0.2,0c0.3,0,0.7,0,1-0.1c0,0,0,0,0,0c0.3,0,0.7-0.1,1-0.1c0.1,0,0.1,0,0.2,0c0.3-0.1,0.6-0.1,0.9-0.2c0,0,0.1,0,0.1,0   c0.3-0.1,0.6-0.1,0.8-0.2c0,0,0.1,0,0.1,0c0.3-0.1,0.5-0.1,0.8-0.2c0.1,0,0.1,0,0.2,0c0.3-0.1,0.5-0.2,0.7-0.3   c0.4-0.1,0.7-0.5,0.9-0.8s0.1-0.8,0-1.2c-0.5-1-0.7-1.9-0.7-2.7c0-1.3,0.4-2.3,0.9-3c1.2-1.6,3.5-2.6,5.5-2.3   c0.8,0.1,1.8,0.5,2.5,1.6c-0.5,0-1,0.1-1.3,0.5c-0.5,0.6-0.4,1.6,0.2,2.1l3.8,3.2c0,0,0,0,0,0l8.9,7.5C49.1,68.9,49,69,48.8,69   c-0.3,0.2-0.7,0.4-1,0.6c-0.1,0-0.1,0.1-0.2,0.2c-0.2,0.2-0.5,0.4-0.7,0.6c-0.1,0.1-0.1,0.2-0.2,0.3c-0.2,0.2-0.3,0.4-0.5,0.6   c-0.1,0.1-0.1,0.3-0.2,0.4c-0.1,0.2-0.2,0.4-0.3,0.6l-3.9-4c0,0,0,0,0,0l-8.6-8.8c-0.6-0.6-1.5-0.6-2.1,0c-0.6,0.6-0.6,1.5,0,2.1   l7.8,8c0,0,0,0.1-0.1,0.1c-0.1,0.2-0.2,0.3-0.3,0.5c-0.1,0.1-0.1,0.2-0.2,0.3c-0.1,0.1-0.2,0.3-0.3,0.4c-0.1,0.1-0.2,0.2-0.3,0.3   c-0.1,0.1-0.3,0.3-0.4,0.4c-0.1,0.1-0.2,0.2-0.3,0.3c-0.1,0.1-0.3,0.2-0.4,0.4c-0.1,0.1-0.2,0.2-0.3,0.2c-0.2,0.1-0.3,0.2-0.5,0.4   c-0.1,0.1-0.2,0.1-0.3,0.2c-0.2,0.1-0.4,0.3-0.7,0.4c-0.1,0-0.1,0.1-0.2,0.1c0,0,0,0,0,0l-3.7-4c-0.3-0.3-0.7-0.5-1.1-0.5   c-0.1,0-0.2,0-0.2,0c-8.5,1.4-13.5,0.7-16.2-2.3c-1.2-1.3-2-3-2.5-5.3c0,0,0.1,0,0.1,0.1C11.4,61.8,11.7,62,12,62.3z M9.2,80.1   c-2.7-3.7-2.2-8.8,1-12.7c0.3,0.5,0.7,1,1.1,1.4c3.4,3.8,9,4.8,18.1,3.4l3.5,3.8c0.1,0.7,0.4,1.8,0.8,3.4   C20.6,86.7,12.5,84.5,9.2,80.1z M37.4,81.1c-0.6-1.8-1.1-3.7-1.3-4.7c0,0,0,0,0,0c0.5-0.3,1-0.6,1.4-0.9c0.1,0,0.1-0.1,0.2-0.1   c0.4-0.3,0.8-0.6,1.2-0.9c0.1-0.1,0.1-0.1,0.2-0.2c0.4-0.3,0.7-0.7,1-1c0-0.1,0.1-0.1,0.1-0.2c0.3-0.4,0.7-0.8,0.9-1.2l3,3   C42.7,77.6,40.4,79.6,37.4,81.1z M54.1,75.2c-0.2,0.7-0.8,1.3-1.4,1.6c-0.7,0.3-1.5,0.4-2.2,0.1c-0.7-0.2-1.3-0.8-1.6-1.4   c-0.3-0.7-0.4-1.4-0.1-2.2c0.2-0.7,0.8-1.3,1.4-1.6c0.2-0.1,0.4-0.2,0.7-0.2c0.1,0,0.1,0,0.2,0c0.2,0,0.4,0,0.5,0c0,0,0.1,0,0.1,0   c0.2,0,0.4,0.1,0.6,0.1c0,0,0.1,0,0.1,0c0.2,0.1,0.4,0.2,0.6,0.3l0,0l0.2,0.2c0.3,0.2,0.5,0.5,0.6,0.8   C54.3,73.7,54.3,74.5,54.1,75.2z M45.8,58c0.2,1.1,0.6,2.6,0.7,4.6l-3.9-3.2c-0.6-2-1.5-3.5-1.7-4c-0.9-2.4-2.8-4-5.3-4.4   c-3.1-0.5-6.5,0.9-8.4,3.5c-0.5,0.7-0.9,1.5-1.2,2.3c0,0.1,0,0.1-0.1,0.2c-0.1,0.2-0.1,0.4-0.1,0.5c0,0.1-0.1,0.2-0.1,0.3   c0,0.1,0,0.3,0,0.4c0,0.2,0,0.4-0.1,0.5c0,0.1,0,0.2,0,0.3c0,0.2,0,0.4,0,0.7c0,0.1,0,0.2,0,0.3c0,0.2,0,0.4,0.1,0.7   c0,0.1,0.1,0.2,0.1,0.3c0,0.2,0.1,0.4,0.2,0.6c-2.7,0.7-8.6,1.6-12.9-2.2c0,0-0.1-0.1-0.1-0.1c-0.2-0.2-0.5-0.5-0.7-0.7   c-0.1-0.1-0.2-0.2-0.3-0.3c-0.2-0.2-0.3-0.4-0.5-0.7c-0.1-0.2-0.3-0.3-0.4-0.5c-0.1-0.2-0.3-0.4-0.4-0.7c-0.1-0.2-0.2-0.4-0.4-0.6   c-0.1-1-0.3-4.8,2.4-8.4c2.8-3.8,7.9-6.2,15.1-7.2c0.7-0.1,1.3-0.7,1.3-1.4c0,0,0.1-2.3,1.7-3.4c1.6-1.1,4.2-0.6,6.1,0   c0.4,0.1,0.8,0.1,1.1-0.1l4.6-2.3l4.4,5c0.3,0.3,0.7,0.5,1.1,0.5c0.4,0,0.7-0.1,1-0.4c0.6-0.5,0.7-1.5,0.1-2.1l-3.8-4.4l11.4-5.6   c7.1,8.8,7.4,9.4,8,16c-2.8,1.6-11.9,7.1-18.7,12.2C45.2,55,45.5,56.4,45.8,58z M86.9,29.6l-19,10.7c-0.6-6.1-1.4-7.4-8-15.6   l20.3-8.5C86.8,23.1,87.1,23.6,86.9,29.6z"/></g>
+                </svg>
+                <span class="text-slate-800 text-2xl dark:text-white italic leading-snug block">in the software development industry since 2012</span>
+                  
+              </a>
+            </h1>
+            <ul class="flex items-start justify-center">
+              <li class="transition duration-150 ease-in text-slate-700 flex justify-center items-center text-sm font-bold mb-1.5 dark:text-white hover:text-blue-600 hover:translate-y-1 dark:hover:text-blue-600">
+                <a href="/" title="78 Veloso St. Obrero Davao City 8000" class="p-2" aria-label="Home and address">
+                  <svg xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-home-link"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20.085 11.085l-8.085 -8.085l-9 9h2v7a2 2 0 0 0 2 2h4.5" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 1.807 1.143" /><path d="M21 21m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M21 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M16 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M21 16l-5 3l5 2" /></svg>
+                </a>
+              </li>
+              <li x-data="{ open: false }" class="transition duration-150 ease-in text-slate-700 mb-1.5 flex justify-center relative dark:text-white hover:text-blue-600 hover:translate-y-1 dark:hover:text-blue-600">              
+                <button @click.prevent="open = !open" class="p-2" aria-label="emails">
+                  <svg xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z" /><path d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z" /></svg>
+                </button>
+                <div x-show="open" @click.away="open = false" class="text-left absolute z-50 top-full left-0 bg-white dark:bg-black text-white">
+                  <a href="mailto:jo@marketdragon.ph" class="block leading-snug p-4 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm">jo@marketdragon.ph</a>
+                  <a href="mailto:jdltechworks@gmail.com" class="block leading-snug p-4 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm">jdltechworks@gmail.com</a>
+                </div>
+    
+              </li>
+              <li class="transition duration-150 ease-in text-slate-700 flex justify-center text-sm dark:text-white hover:text-blue-600 hover:translate-y-1 dark:hover:text-blue-600">
+                <a href="https://github.com/jdltechworks" aria-label="github" target="_blank" class="flex items-center p-2">
+                  <svg xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+                </a>
+              </li>
+              <li class="transition duration-150 ease-in text-slate-700 flex justify-center text-sm dark:text-white hover:text-blue-600 hover:translate-y-1 dark:hover:text-blue-600">
+                <a href="https://www.linkedin.com/in/joxyz/" aria-label="github" target="_blank" class="flex items-center p-2">
+                  <svg  xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>              </a>
+              </li>
+            </ul>
+          </div>
+        
+      </div>
+        
+        <div class="py-4">
           <div class="text-left">
             <h2 class="font-bold text-xl my-8 px-4 sm:px-0 dark:text-white">Software development Skills</h2>
             <div class="flex items-start border-l-4 border-slate-400 mt-2 mb-14 py-8">
@@ -202,7 +197,7 @@
               </p>
             </div>
             <ul class="grid grid-cols-12 gap-4 px-4">
-              <li class="transition duration-150 ease-in hover:-translate-y-1 col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-800">
+              <li class="transition duration-150 ease-in hover:-translate-y-1 col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-900">
                 <a href="https://laravel.com" target="_blank" class="flex flex-col">
                   <div class="flex flex-col items-center mb-2 flex-1">
                     <span class="mb-2 dark:text-white">Laravel</span>
@@ -227,7 +222,7 @@
                   </div>
                 </a>
               </li>
-              <li class="transition duration-150 ease-in hover:-translate-y-1 col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-800">
+              <li class="transition duration-150 ease-in hover:-translate-y-1 col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-900">
                 <a href="https://php.net" target="_blank" class="block" class="flex flex-col">
                 <div class="flex flex-col items-center mb-2 flex-1">
                     <span class="mb-2 dark:text-white">Php</span>
@@ -313,7 +308,7 @@
                   </div>
                 </a>
               </li>
-              <li class="transition duration-150 ease-in hover:-translate-y-1 col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-800">
+              <li class="transition duration-150 ease-in hover:-translate-y-1 col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-900">
                 <a href="https://mysql.com" target="_blank" class="flex flex-col">
                 <div class="flex items-center mb-2 flex-1 flex-col">
                     <span class="mb-2 dark:text-white">MySQL</span>
@@ -341,7 +336,7 @@
                   </div>
                 </a>
               </li>
-              <li class="transition duration-150 ease-in hover:-translate-y-1  col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-800">
+              <li class="transition duration-150 ease-in hover:-translate-y-1  col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-900">
                 <a href="https://kotlinlang.org" target="_blank" class="flex flex-col">
                 <div class="flex items-center mb-2 flex-1 flex-col">
                 <span class="mb-2 dark:text-white">Kotlin</span>
@@ -399,7 +394,7 @@
                 </div>
                 </a>
               </li>
-              <li class="transition duration-150 ease-in hover:-translate-y-1 col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-800">
+              <li class="transition duration-150 ease-in hover:-translate-y-1 col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-900">
                 <a href="https://livewire.laravel.com" target="_blank" class="flex flex-col">
                 <div class="flex items-center flex-1 flex-col">
                   <span class="mb-2 dark:text-white">Livewire</span>
@@ -431,7 +426,7 @@
                 </div>
                 </a>
               </li>
-              <li class="transition duration-150 ease-in hover:-translate-y-1 col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-800 flex flex-col">
+              <li class="transition duration-150 ease-in hover:-translate-y-1 col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-900 flex flex-col">
                 <a href="https://htmx.org" target="_blank" class="flex flex-col">
                 <div class="flex items-center flex-1 flex-col">
                   
@@ -463,7 +458,7 @@
                   </div>
                 </a>
               </li>
-              <li class="transition duration-150 ease-in hover:-translate-y-1 col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-800 flex flex-col">
+              <li class="transition duration-150 ease-in hover:-translate-y-1 col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-900 flex flex-col">
                 <a href="https://javascript.com" target="_blank" class="flex flex-col">
                 <div class="flex items-center flex-1 flex-col">
                   
@@ -493,7 +488,7 @@
                 </a>
               </li>
               
-              <li class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-800 flex flex-col">
+              <li class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-900 flex flex-col">
                 <a href="https://www.typescriptlang.org/" target="_blank">
                   <div class="flex items-center flex-1 flex-col">
                     <span class="mb-2 dark:text-white">Typescript</span>
@@ -518,7 +513,7 @@
                   </div>
                 </a>
               </li>
-              <li class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-800 flex flex-col">
+              <li class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-900 flex flex-col">
                 <a href="https://vuejs.org" target="_blank">
                   <div class="flex items-center flex-1 flex-col">
                     <span class="mb-2 dark:text-white">VueJS</span>
@@ -544,7 +539,7 @@
                   </div>
                 </a>
               </li>
-              <li class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-800 flex flex-col">
+              <li class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-900 flex flex-col">
                 <div class="flex items-center flex-1 flex-col">
                   <span class="mb-2 dark:text-white">DevOps</span>
                   <svg  xmlns="http://www.w3.org/2000/svg"  width="50"  height="50"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-server"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 4m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z" /><path d="M3 12m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z" /><path d="M7 8l0 .01" /><path d="M7 16l0 .01" /></svg>
@@ -567,7 +562,7 @@
                   </svg>
                 </div>
               </li>
-              <li class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-800 flex flex-col">
+              <li class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-900 flex flex-col">
                 <a href="https://react.dev" target="_blank">
                 <div class="flex items-center flex-1 flex-col">
                   <span class="mb-2 dark:text-white">ReactJS</span>
@@ -600,7 +595,7 @@
                 </div>
                 </a>
               </li>
-              <li class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-800 flex flex-col">
+              <li class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-900 flex flex-col">
                 <a href="https://react.dev" target="_blank">
                 <div class="flex items-center flex-1 flex-col">
                   <span class="mb-2 dark:text-white">TailwindCSS</span>
@@ -624,7 +619,7 @@
                 </div>
                 </a>
               </li>
-              <li class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-800 flex flex-col">
+              <li class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-900 flex flex-col">
                 <a href="https://nodejs.org" target="_blank">
                   <div class="flex items-center flex-1 flex-col">
                     <span class="mb-2 dark:text-white">NodeJS</span>
@@ -649,7 +644,7 @@
                   </div>
                 </a>
               </li>
-              <li class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-800 flex flex-col">
+              <li class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-3 p-2 font-bold text-slate-600 border rounded dark:border-slate-900 flex flex-col">
                 <a href="https://expressjs.com/" target="_blank">
                   <div class="flex items-center flex-1 flex-col">
                     <span class="mb-2 dark:text-white">ExpressJS</span>
@@ -762,37 +757,37 @@
           </div>
           <h2 class="font-bold text-xl my-8 px-4 sm:px-0 dark:text-white">Contributed to these projects</h2>
           <div class="grid grid-cols-12 gap-4 px-4">
-            <div class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-4 font-bold text-slate-600 border rounded flex flex-col dark:border-slate-800">
+            <div class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-4 font-bold text-slate-600 border rounded flex flex-col dark:border-slate-900">
               <a href="https://eetech.com" target="_blank">
                 <span class="p-2 block dark:text-white">EETech</span>
                 <img src="images/eetech.png" class="w-full" alt="EETech website thumbnail" />
               </a>
             </div>
-            <div class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-4 font-bold text-slate-600 border rounded flex flex-col dark:border-slate-800">
+            <div class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-4 font-bold text-slate-600 border rounded flex flex-col dark:border-slate-900">
               <a href="https://allaboutcircuits.com" target="_blank">
                 <span class="p-2 block dark:text-white">All About Circuits</span>
                 <img src="images/aac.png" class="w-full" alt="All About Circuits website thumbnail" />
               </a>
             </div>
-            <div class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-4 font-bold text-slate-600 border rounded flex flex-col dark:border-slate-800">
+            <div class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-4 font-bold text-slate-600 border rounded flex flex-col dark:border-slate-900">
               <a href="https://control.com" target="_blank">
                 <span class="p-2 block dark:text-white">Control</span>
                 <img src="images/control.png" class="w-full" alt="Control website thumbnail" />
               </a>
             </div>
-            <div class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-4 font-bold text-slate-600 border rounded flex flex-col dark:border-slate-800">
+            <div class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-4 font-bold text-slate-600 border rounded flex flex-col dark:border-slate-900">
               <a href="https://maker.pro" target="_blank">
                 <span class="p-2 block dark:text-white">Maker Pro</span>
                 <img src="images/maker.png" class="w-full" alt="Maker Pro website thumbnail" />
               </a>
             </div>
-            <div class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-4 font-bold text-slate-600 border rounded flex flex-col dark:border-slate-800">
+            <div class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-4 font-bold text-slate-600 border rounded flex flex-col dark:border-slate-900">
               <a href="https://eepower.com" target="_blank">
                 <span class="p-2 block dark:text-white">EEPower</span>
                 <img src="images/eepower.png" class="w-full" alt="EEPower website image" />
               </a>
             </div>
-            <div class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-4 font-bold text-slate-600 border rounded flex flex-col dark:border-slate-800">
+            <div class="transition duration-150 ease-in hover:-translate-y-1 hover:shadow col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-4 font-bold text-slate-600 border rounded flex flex-col dark:border-slate-900">
               <a href="https://marketdragon.ph" target="_blank">
                 <span class="p-2 block dark:text-white">MarketDragon</span>
                 <img src="images/marketdragon.png" class="w-full" alt="MarketDragon website image" />
@@ -800,8 +795,6 @@
             </div>
           </div>
           
-
-        </div>
       </div>
     </div>
   </div>
