@@ -1089,14 +1089,14 @@
 
             <div class="grid grid-cols-12 gap-4 py-14 pb-10 px-4 md:px-0">
               <div class="col-span-12 md:col-span-8">
-                <div class="flex items-start flex-col md:flex-row">
-                  <div class="w-96 mx-auto md:mr-auto shadow rounded overflow-hidden"><iframe title="My Location" width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=78%20Veloso%20St%20Obrero%20Davao%20City+(MarketDragon)&amp;t=&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps devices</a></iframe>
+                <div class="flex items-start flex-col lg:flex-row">
+                  <div class="w-full md:w-96 mx-auto md:mr-auto shadow rounded overflow-hidden"><iframe title="My Location" width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=78%20Veloso%20St%20Obrero%20Davao%20City+(MarketDragon)&amp;t=&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps devices</a></iframe>
                   </div>
                   <div class="p-4 flex-1 dark:text-white space-mono-regular pr-8">
                     <ul>
                       <li class="flex items-start">
                         <svg  xmlns="http://www.w3.org/2000/svg" class="mr-2" width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-map-pin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18.364 4.636a9 9 0 0 1 .203 12.519l-.203 .21l-4.243 4.242a3 3 0 0 1 -4.097 .135l-.144 -.135l-4.244 -4.243a9 9 0 0 1 12.728 -12.728zm-6.364 3.364a3 3 0 1 0 0 6a3 3 0 0 0 0 -6z" /></svg>
-                        78 Veloso St. Bo. Obrero Davao City Brgy 20-B, Philippines 8000</li>
+                        78 Veloso St. Bo. Obrero Brgy 20-B, Davao City  Philippines 8000</li>
                       <li class="flex items-start py-4">
                         <svg  xmlns="http://www.w3.org/2000/svg"  class="mr-2" width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-phone"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 3a1 1 0 0 1 .877 .519l.051 .11l2 5a1 1 0 0 1 -.313 1.16l-.1 .068l-1.674 1.004l.063 .103a10 10 0 0 0 3.132 3.132l.102 .062l1.005 -1.672a1 1 0 0 1 1.113 -.453l.115 .039l5 2a1 1 0 0 1 .622 .807l.007 .121v4c0 1.657 -1.343 3 -3.06 2.998c-8.579 -.521 -15.418 -7.36 -15.94 -15.998a3 3 0 0 1 2.824 -2.995l.176 -.005h4z" /></svg>
                         +639973063490
@@ -1117,19 +1117,19 @@
                   </div>
                 </div>
               </div>
-              <div class="col-span-12 md:col-span-4 space-mono-regular">
+              <div class="col-span-12 lg:col-span-4 space-mono-regular">
                 <form>
                   <div class="mb-4">
                     <label for="name" class="block text-slate-800 dark:text-white pb-1.5">Name</label>
-                    <input type="text" placehoder="Enter your name" class="w-full transition duration-150 ease-in p-2 focus:ring-4 focus:ring-offset-2 rounded bg-slate-100 focus:ring-blue-500 outline:none focus:outline-none"/>
+                    <input id="name" type="text" placehoder="Enter your name" class="w-full transition duration-150 ease-in p-2 focus:ring-4 focus:ring-offset-2 rounded bg-slate-100 focus:ring-blue-500 outline:none focus:outline-none"/>
                   </div>
                   <div class="mb-4">
                     <label for="email" class="block text-slate-800 dark:text-white pb-1.5">Email</label>
-                    <input type="email" placehoder="Enter your name" class="w-full transition duration-150 ease-in p-2 focus:ring-4 focus:ring-offset-2 rounded bg-slate-100 focus:ring-blue-500 outline:none focus:outline-none"/>
+                    <input id="email" type="email" placehoder="Enter your name" class="w-full transition duration-150 ease-in p-2 focus:ring-4 focus:ring-offset-2 rounded bg-slate-100 focus:ring-blue-500 outline:none focus:outline-none"/>
                   </div>
                   <div class="mb-4">
                     <label for="message" class="block text-slate-800 dark:text-white pb-1.5">Message</label>
-                    <textarea x-data x-autosize placehoder="Enter your name" class="w-full transition duration-150 ease-in p-2 focus:ring-4 focus:ring-offset-2 rounded bg-slate-100 focus:ring-blue-500 outline:none focus:outline-none" placeholder="Enter your message here..."></textarea>
+                    <textarea id="message" x-data x-autosize placehoder="Enter your name" class="w-full transition duration-150 ease-in p-2 focus:ring-4 focus:ring-offset-2 rounded bg-slate-100 focus:ring-blue-500 outline:none focus:outline-none" placeholder="Enter your message here..."></textarea>
                   </div>
                   <button class="w-full relative text-xl font-bold text-white mx-auto bg-blue-700 hover:bg-blue-700 focus:ring-4 focus:ring-offset-2 focus:ring-blue-700 dark:focus:ring-blue-700 font-medium rounded-lg font-bold px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none text-center">Send</button>
                 </form>
