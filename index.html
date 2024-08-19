@@ -120,19 +120,30 @@
             </svg>
           </button>
           <a href="cv.pdf" target="_blank" class="space-mono-regular relative inline-flex text-white mx-auto bg-blue-700 hover:bg-blue-700 focus:ring-1 focus:ring-offset-1 focus:ring-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+            <span class="flex absolute h-5 w-5 top-0 right-0 -mt-1 -mr-1">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-5 w-5 bg-lime-500"></span>
+            </span>
+            Download CV
+          </a>
+        </div>
+      </nav>
+    </header>
+    <div class="md:hidden fixed bg-white dark:bg-black border-b dark:border-slate-800 py-2 z-50 px-4 w-full flex items-center">
+      <button @click.prevent="menu = true" class="block text-white" aria-expanded="false" aria-controls="mobile-menu-open" class="focus:outline-none">
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-menu"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8l16 0" /><path d="M4 16l16 0" /></svg>
+      </button>
+      <div class="flex-1 flex justify-end">
+        <a href="cv.pdf" target="_blank" class="space-mono-regular relative inline-flex text-white bg-blue-700 hover:bg-blue-700 focus:ring-1 focus:ring-offset-1 focus:ring-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
           <span class="flex absolute h-5 w-5 top-0 right-0 -mt-1 -mr-1">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-5 w-5 bg-lime-500"></span>
           </span>
           Download CV
-          </a>
-        </div>
-      </nav>
-    </header>
+        </a>
+      </div>
+    </div>
 
-    <button @click.prevent="menu = true" class="block md:hidden fixed top-3 left-3 text-white z-50" aria-expanded="false" aria-controls="mobile-menu-open" class="focus:outline-none">
-      <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-menu"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8l16 0" /><path d="M4 16l16 0" /></svg>
-    </button>
     <nav x-show="menu"
       x-transition:enter="transform transition-transform ease-out duration-150"
       x-transition:enter-start="-translate-x-full"
@@ -1118,7 +1129,8 @@
                 </div>
               </div>
               <div class="col-span-12 lg:col-span-4 xl:col-span-4 space-mono-regular">
-                <form>
+              
+                <form hx-post="http://laravel.test/api/contact" hx-swap="show:unset">
                   <div class="mb-4">
                     <label for="name" class="block text-slate-800 dark:text-white pb-1.5">Name</label>
                     <input id="name" type="text" placeholder="Enter your name" class="w-full transition duration-150 ease-in p-2 focus:ring-4 focus:ring-offset-2 rounded bg-slate-100 focus:ring-blue-500 outline:none focus:outline-none"/>
@@ -1131,7 +1143,7 @@
                     <label for="message" class="block text-slate-800 dark:text-white pb-1.5">Message</label>
                     <textarea id="message" x-data x-autosize placeholder="Write a message" class="w-full transition duration-150 ease-in p-2 focus:ring-4 focus:ring-offset-2 rounded bg-slate-100 focus:ring-blue-500 outline:none focus:outline-none" placeholder="Enter your message here..."></textarea>
                   </div>
-                  <button class="w-full relative text-xl font-bold text-white mx-auto bg-blue-700 hover:bg-blue-700 focus:ring-4 focus:ring-offset-2 focus:ring-blue-700 dark:focus:ring-blue-700 font-medium rounded-lg font-bold px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none text-center">Send</button>
+                  <button type="submit" class="w-full relative text-xl font-bold text-white mx-auto bg-blue-700 hover:bg-blue-700 focus:ring-4 focus:ring-offset-2 focus:ring-blue-700 dark:focus:ring-blue-700 font-medium rounded-lg font-bold px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none text-center">Send</button>
                 </form>
               </div>
             </div>
